@@ -12,7 +12,7 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    // const { signIn, googleSignIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,9 +22,9 @@ const Login = () => {
                 title: "Error!",
                 text: "Please enter both email and password.",
                 icon: "error",
-                background: "#FFFBDE",
-                color: "#096B68",
-                confirmButtonColor: "#129990",
+                background: "#f0f4ff",
+                color: "black",
+                confirmButtonColor: "#FF0000",
             });
             return;
         }
@@ -38,8 +38,8 @@ const Login = () => {
                 text: "Login successful!",
                 icon: "success",
                 background: "white/70",
-                color: "rgba(6,64,43,0.7)",
-                confirmButtonColor: "rgba(6,64,43,0.7)",
+                color: "black",
+                confirmButtonColor: "#34b233",
             });
 
         } catch (error) {
@@ -47,9 +47,9 @@ const Login = () => {
                 title: "Error!",
                 text: error.message || "Login failed.",
                 icon: "error",
-                background: "white/70",
-                color: "rgba(6,64,43,0.7)",
-                confirmButtonColor: "rgba(6,64,43,0.7)",
+                background: "#f0f4ff",
+                color: "black",
+                confirmButtonColor: "#fdc800",
             });
         } finally {
             setLoading(false);
@@ -65,9 +65,9 @@ const Login = () => {
                 title: "Success!",
                 text: "Logged in with Google!",
                 icon: "success",
-                background: "white/70",
-                color: "rgba(6,64,43,0.7)",
-                confirmButtonColor: "rgba(6,64,43,0.7)",
+                background: "#f0f4ff",
+                color: "black",
+                confirmButtonColor: "#34b233",
             });
 
         } catch (error) {
@@ -75,9 +75,9 @@ const Login = () => {
                 title: "Error!",
                 text: error.message || "Google login failed.",
                 icon: "error",
-                background: "white/70",
-                color: "rgba(6,64,43,0.7)",
-                confirmButtonColor: "rgba(6,64,43,0.7)",
+                background: "#f0f4ff",
+                color: "black",
+                confirmButtonColor: "#fdc800",
             });
         } finally {
             setLoading(false);
