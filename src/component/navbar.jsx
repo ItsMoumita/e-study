@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaSun, FaMoon, FaBars } from 'react-icons/fa';
+import { MdLightMode } from "react-icons/md";
 import ThemeToggle from './ThemeToggle';
 import { AuthContext } from '../../context/AuthContext';
 import Swal from 'sweetalert2';
@@ -43,7 +44,7 @@ const Navbar = ({ toggleTheme }) => {
             onClick={toggleTheme}
             className="text-white text-xl hover:text-[#fdc800] transition"
           >
-            <FaSun className="hidden dark:inline" />
+            <MdLightMode className="hidden dark:inline" />
             <FaMoon className="inline dark:hidden" />
           </button>
           <button
@@ -127,7 +128,7 @@ const Navbar = ({ toggleTheme }) => {
 
           {/* Theme Toggle (Desktop) */}
           {/* <button onClick={toggleTheme} className="text-white hover:text-[#fdc800] transition">
-            <FaSun className="hidden dark:inline" />
+            <MdLightMode className="hidden dark:inline" />
             <FaMoon className="inline dark:hidden" />
           </button> */}
           <ThemeToggle></ThemeToggle>

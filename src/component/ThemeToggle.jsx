@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
+import { MdLightMode } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
 
 const ThemeToggle = () => {
@@ -31,12 +32,12 @@ const ThemeToggle = () => {
         onClick={toggleTheme}
         data-tooltip-id="theme-tooltip"
         data-tooltip-content={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
-        className="w-10 h-10 rounded-full flex items-center justify-center  hover:scale-110 transition-all duration-300"
+        className="w-10 h-10 size-16 rounded-full flex items-center justify-center  hover:scale-110 transition-all duration-300"
       >
         {theme === "dark" ? (
-          <FaSun className="text-white hover:text-[#fdc800] text-xl" />
+          <MdLightMode className="text-white hover:text-[#fdc800] text-3xl" />
         ) : (
-          <FaMoon className="text-white hover:text-[#fdc800] text-xl" />
+          <FaMoon className="text-white hover:text-[#fdc800] text-3xl" />
         )}
       </button>
       <Tooltip 
