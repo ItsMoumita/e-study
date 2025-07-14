@@ -1,22 +1,39 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <div className="w-full mx-auto relative">
       {/* Overlay text section */}
-      <div className="absolute top-0 left-0 w-full h-full z-20 flex flex-col justify-center items-center text-white text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">Study</h1>
-        <p className="text-xl mb-6">Study - Education HTML5 Template</p>
-        
-    
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="absolute top-0 left-0 w-full h-full z-20 flex flex-col justify-center items-center text-white text-center px-4"
+      >
+        <motion.h1
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-4xl md:text-6xl font-bold mb-4 text-white"
+        >
+          Welcome to E-Study
+        </motion.h1>
 
-    
-      </div>
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.4 }}
+          className="text-xl mb-6 text-white"
+        >
+          your collaborative learning space.
+        </motion.p>
+      </motion.div>
 
       {/* Overlay dark background */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[#597594] dark:bg-black opacity-60 z-10"></div>
 
       {/* Carousel container */}
       <div className="relative z-0 w-full h-[80vh]">

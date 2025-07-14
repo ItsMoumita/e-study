@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import CreateAssignment from "../pages/CreateAssignment";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
             index: true,
             Component: Home
         },
+        {
+          path: "create-assignment",
+          Component: CreateAssignment
+        }
         
     ]
   },

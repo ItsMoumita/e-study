@@ -10,9 +10,10 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-// import Loading from "../Component/Loading";
 import { AuthContext } from "./AuthContext";
-import { auth } from "../src/firebase/firebase.init";
+import { auth } from "../firebase/firebase.init";
+import axios from "axios";
+import Loading from "../component/Loading";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -46,6 +47,8 @@ const createUser = (email, password) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+
+
       if (currentUser) {
        
         await currentUser.reload();
@@ -53,6 +56,13 @@ const createUser = (email, password) => {
       } else {
         setUser(null);
       }
+       
+     axios.get("http://localhost:3000/", {
+        headers: {
+          Authorization: `Bearer ${currentUser?.accessToken}`,
+        }
+      })
+
       setLoading(false);
     });
     return () => {
@@ -61,7 +71,7 @@ const createUser = (email, password) => {
   }, []);
 
   if (loading) {
-    // return <Loading></Loading> 
+    return <Loading></Loading> 
   }
 
   const googleProvider = new GoogleAuthProvider();

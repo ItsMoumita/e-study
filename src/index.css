@@ -2,9 +2,22 @@
 @plugin "daisyui";
 
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+    html {
+        @apply transition-colors duration-300;
+    }
+    body{
+        @apply bg-white/80 dark:bg-gray-900/80 dark:text-gray-100;
+    }
+}
+
 
 /* #002147 */
 /* #fdc800 */
+/* #f0f4ff */
+/* #597594 */
 
 
 

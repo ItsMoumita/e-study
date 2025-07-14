@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -56,9 +56,9 @@ const Register = () => {
                 title: "Success!",
                 text: "Registered successfully!",
                 icon: "success",
-                background: "white/70",
-                color: "rgba(6,64,43,0.7)",
-                confirmButtonColor: "rgba(6,64,43,0.7)",
+                 background: "white/70",
+                color: "black",
+                confirmButtonColor: "#002147",
             });
 
             navigate("/");
@@ -68,9 +68,9 @@ const Register = () => {
                 title: "Error!",
                 text: error.message,
                 icon: "error",
-                background: "white/70",
-                color: "rgba(6,64,43,0.7)",
-                confirmButtonColor: "rgba(6,64,43,0.7)",
+                 background: "white/70",
+                color: "black",
+                confirmButtonColor: "#002147",
             });
 
         }
@@ -90,9 +90,9 @@ const Register = () => {
                 title: "Success!",
                 text: "Registered with Google!",
                 icon: "success",
-                background: "#f0f4ff",
+                 background: "white/70",
                 color: "black",
-                confirmButtonColor: "#34b233",
+                confirmButtonColor: "#002147",
             });;
         } catch (erorr) {
             //     await Swal.fire({

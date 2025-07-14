@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { FaSun, FaMoon, FaBars } from 'react-icons/fa';
 import { MdLightMode } from "react-icons/md";
 import ThemeToggle from './ThemeToggle';
-import { AuthContext } from '../../context/AuthContext';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../context/AuthContext';
 
 const Navbar = ({ toggleTheme }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -22,15 +22,15 @@ const Navbar = ({ toggleTheme }) => {
         text: "Logged out successful!",
         icon: "success",
         background: "white/70",
-        color: "rgba(6,64,43,0.7)",
-        confirmButtonColor: "rgba(6,64,43,0.7)",
+        color: "black",
+        confirmButtonColor: "#002147",
       });
     } catch (error) {
       console.error("Logout failed:", error);
     }
   };
   return (
-    <nav className="bg-[#002147] px-6 md:px-12 py-5 shadow-md">
+    <nav className="bg-[#002147]  px-6 md:px-12 py-5 shadow-md">
       <div className="flex justify-between items-center">
         {/* Website Name */}
         <h1 className="text-3xl font-bold">

@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -22,9 +22,9 @@ const Login = () => {
                 title: "Error!",
                 text: "Please enter both email and password.",
                 icon: "error",
-                background: "#f0f4ff",
+               background: "white/70",
                 color: "black",
-                confirmButtonColor: "#FF0000",
+                confirmButtonColor: "#002147",
             });
             return;
         }
@@ -39,7 +39,7 @@ const Login = () => {
                 icon: "success",
                 background: "white/70",
                 color: "black",
-                confirmButtonColor: "#34b233",
+                confirmButtonColor: "#002147",
             });
 
         } catch (error) {
@@ -47,9 +47,9 @@ const Login = () => {
                 title: "Error!",
                 text: error.message || "Login failed.",
                 icon: "error",
-                background: "#f0f4ff",
+                background: "white/70",
                 color: "black",
-                confirmButtonColor: "#fdc800",
+                confirmButtonColor: "#002147",
             });
         } finally {
             setLoading(false);
@@ -65,9 +65,9 @@ const Login = () => {
                 title: "Success!",
                 text: "Logged in with Google!",
                 icon: "success",
-                background: "#f0f4ff",
+                background: "white/70",
                 color: "black",
-                confirmButtonColor: "#34b233",
+                confirmButtonColor: "#002147",
             });
 
         } catch (error) {
@@ -75,9 +75,9 @@ const Login = () => {
                 title: "Error!",
                 text: error.message || "Google login failed.",
                 icon: "error",
-                background: "#f0f4ff",
+                background: "white/70",
                 color: "black",
-                confirmButtonColor: "#fdc800",
+                confirmButtonColor: "#002147",
             });
         } finally {
             setLoading(false);
