@@ -32,9 +32,8 @@ const CreateAssignment = () => {
 
    try {
   setLoading(true);
-
-  const createdAssignment = await axios.post("http://localhost:3000/assignments", assignment).then((res) => res.data);
-
+   await axios.post("http://localhost:3000/assignments", assignment).then((res) => res.data);
+   
    
 
   // Success – if we’re here, it didn’t throw
@@ -46,12 +45,12 @@ const CreateAssignment = () => {
   });
 
   // Clear form
-//   setTitle("");
-//   setDescription("");
-//   setMarks("");
-//   setThumbnail("");
-//   setDifficulty("easy");
-//   setDueDate(null);
+  setTitle("");
+  setDescription("");
+  setMarks("");
+  setThumbnail("");
+  setDifficulty("easy");
+  setDueDate(null);
 
 } catch (err) {
   Swal.fire({

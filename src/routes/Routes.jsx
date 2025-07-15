@@ -6,6 +6,10 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import CreateAssignment from "../pages/CreateAssignment";
+import Assignment from "../pages/Assignment";
+import UpdatedAssignment from "../pages/UpdatedAssignment";
+import ViewAssignment from "../pages/ViewAssignment";
+import SubmitForm from "../pages/SubmitForm";
 
 export const router = createBrowserRouter([
   {
@@ -19,8 +23,23 @@ export const router = createBrowserRouter([
         {
           path: "create-assignment",
           Component: CreateAssignment
+        },
+        {
+          path: "assignments",
+          Component: Assignment
+        },
+        {
+          path: "assignments/update/:id",
+          Component: UpdatedAssignment
+        },
+        {
+          path: "/assignments/view/:id",
+          Component: ViewAssignment
+        },
+        {
+          path: "/assignments/:id/submit",
+          Component: SubmitForm
         }
-        
     ]
   },
   {

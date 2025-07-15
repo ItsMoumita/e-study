@@ -1,0 +1,143 @@
+import React, { useEffect, useState, useContext } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { AuthContext } from "../context/AuthContext";
+import { Link } from "react-router-dom";
+import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
+import Loading from "../component/Loading";
+
+const Assignment = () => {
+  const { user } = useContext(AuthContext);
+  const [assignments, setAssignments] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const allAssignments = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/assignments");
+      setAssignments(res.data);
+    } catch (err) {
+      console.error("Error fetching assignments:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDelete = async (id, email) => {
+    
+    if (user?.email !== email) {
+      return Swal.fire({
+        icon: "error",
+        title: "Unauthorized",
+        text: "You can't delete others' assignments!",
+        confirmButtonColor: "#fdc800",
+      });
+    }
+
+    const confirm = await Swal.fire({
+      title: "Are you sure?",
+      text: "Do you really want to delete this assignment?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#fdc800",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    });
+
+    if (confirm.isConfirmed) {
+      try {
+        await axios.delete(`http://localhost:3000/assignments/${id}`, {
+            headers: {
+                Authorization: `Bearer ${user.accessToken}`,
+            }
+        });
+        Swal.fire({
+          icon: "success",
+          title: "Deleted!",
+          text: "Assignment deleted successfully.",
+          confirmButtonColor: "#fdc800",
+        });
+        allAssignments();
+      } catch (err) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: err.response?.data?.message || err.message,
+          confirmButtonColor: "#fdc800",
+        });
+      }
+    }
+  };
+
+  useEffect(() => {
+    allAssignments();
+  }, []);
+
+  if (loading) return <Loading />;
+
+  return (
+    <div className="py-10 px-4 max-w-[1520px] mx-auto">
+      <h2 className="text-3xl font-bold mb-6 text-center text-[#002147] dark:text-white">
+        All Assignments
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {assignments.map((item) => (
+          <div
+            key={item._id}
+            className="bg-white dark:bg-[#1a1f2e] rounded-lg shadow-md p-4 flex items-center justify-between gap-4"
+          >
+            {/* Image */}
+            <div className="w-2/3">
+              <img
+                src={item.thumbnail}
+                alt={item.title}
+                className="rounded-lg w-full h-[150px] object-cover"
+              />
+            </div>
+
+            {/* Info */}
+            <div className="w-1/2 pl-4 space-y-2">
+              <p className="text-sm text-[#002147] dark:text-white font-semibold">
+                Title: <span className="font-normal">{item.title}</span>
+              </p>
+              <p className="text-sm text-[#002147] dark:text-white font-semibold">
+                Marks: <span className="font-normal">{item.marks}</span>
+              </p>
+              <p className="text-sm text-[#002147] dark:text-white font-semibold">
+                Difficulty:{" "}
+                <span className="font-normal capitalize">{item.difficulty}</span>
+              </p>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-col gap-2">
+              <Link
+                to={`/assignments/view/${item._id}`}
+                className="bg-[#fdc800] hover:bg-yellow-400 text-white p-2 rounded"
+                title="View"
+              >
+                <FaEye />
+              </Link>
+              <Link
+                to={`/assignments/update/${item._id}`}
+                className="bg-gray-700 hover:bg-gray-800 text-white p-2 rounded"
+                title="Edit"
+              >
+                <FaEdit />
+              </Link>
+              <button
+                onClick={() => handleDelete(item._id, item.email)}
+                className="bg-red-600 hover:bg-red-700 text-white p-2 rounded"
+                title="Delete"
+              >
+                <FaTrash />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Assignment;
