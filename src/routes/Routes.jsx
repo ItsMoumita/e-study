@@ -10,6 +10,7 @@ import Assignment from "../pages/Assignment";
 import UpdatedAssignment from "../pages/UpdatedAssignment";
 import ViewAssignment from "../pages/ViewAssignment";
 import SubmitForm from "../pages/SubmitForm";
+import PendingAssignment from "../pages/PendingAssignment";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
         {
           path: "/assignments/:id/submit",
           Component: SubmitForm
+        },
+        {
+          path: "/pending",
+          Component: PendingAssignment
         }
     ]
   },

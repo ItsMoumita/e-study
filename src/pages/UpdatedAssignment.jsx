@@ -9,8 +9,8 @@ import Loading from "../component/Loading";
 
 const UpdatedAssignment = () => {
 
-    const { id } = useParams();
-    // console.log(id);
+  const { id } = useParams();
+  // console.log(id);
   const navigate = useNavigate();
 
   const { user } = useContext(AuthContext);
@@ -39,11 +39,13 @@ const UpdatedAssignment = () => {
 
     try {
       setLoading(true);
-    //   const token = await user.getIdToken();
+      //   const token = await user.getIdToken();
+
+      const { _id, ...payload } = assignment;
 
       const updated = await axios.patch(
         `http://localhost:3000/assignments/${id}`,
-        assignment,
+        payload,
         {
           headers: {
             Authorization: `Bearer ${user.accessToken}`,
@@ -64,8 +66,8 @@ const UpdatedAssignment = () => {
 
   if (loading || !assignment) return <Loading />;
 
-    return (
-          <div className="min-h-[80vh] flex items-center justify-center bg-[#f9f9f9] dark:bg-[#0b0f1a] py-10 px-4">
+  return (
+    <div className="min-h-[80vh] flex items-center justify-center bg-[#f9f9f9] dark:bg-[#0b0f1a] py-10 px-4">
       <form
         onSubmit={handleSubmit}
         className="bg-white dark:bg-[#1a1f2e] rounded-lg shadow-lg p-8 w-full max-w-xl space-y-6"
@@ -150,7 +152,7 @@ const UpdatedAssignment = () => {
         </button>
       </form>
     </div>
-    );
+  );
 };
 
 export default UpdatedAssignment;
