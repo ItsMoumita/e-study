@@ -44,6 +44,9 @@ export const router = createBrowserRouter([
         {
           path: "/pending",
           Component: PendingAssignment
+        },
+        {
+          path: "/give-mark/:id"
         }
     ]
   },

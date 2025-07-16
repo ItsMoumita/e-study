@@ -5,6 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Loading from "../component/Loading";
+import { title } from 'framer-motion/client';
 
 
 const SubmitForm = () => {
@@ -32,7 +33,7 @@ const SubmitForm = () => {
     };
     fetchAssignment();
   }, [id]);
-
+console.log(assignment)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,9 +42,14 @@ const SubmitForm = () => {
       studentEmail: user.email,
       submissionLink,
       note,
+      title: assignment.title,
+      marks: assignment.marks,
+      name: assignment.name,
       status: "pending",
       submittedAt: new Date(),
     };
+
+    console.log(submission);
 
     try {
       const res = await axios.post("http://localhost:3000/submissions", submission, {
@@ -54,7 +60,7 @@ const SubmitForm = () => {
 
       if (res.status === 201) {
         Swal.fire("Success", "Assignment submitted successfully", "success");
-        navigate(-1);
+        navigate("/assignments");
       }
     } catch (err) {
       Swal.fire("Error", err.response?.data?.message || err.message, "error");

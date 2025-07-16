@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Loading from "../component/Loading";
+import { sub } from "framer-motion/client";
 
 const PendingAssignment = () => {
   const [submissions, setSubmissions] = useState([]);
@@ -15,7 +16,7 @@ const PendingAssignment = () => {
     //   console.log(res.data);
       const pending = res.data.filter((item) => item.status === "pending");
       setSubmissions(pending);
-      console.log(pending);
+    //   console.log(pending);
     } catch (err) {
       Swal.fire("Error", "Failed to load submissions", "error");
     } finally {
@@ -39,7 +40,7 @@ const PendingAssignment = () => {
         <p className="text-center text-gray-600 dark:text-gray-300">No pending assignments found.</p>
       ) : (
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm bg-white dark:bg-[#1a1f2e] border rounded-lg">
+          <table className="min-w-full text-sm bg-white dark:bg-[#373f55] border rounded-lg">
             <thead className="bg-[#fdc800] text-black">
               <tr>
                 <th className="py-3 px-4 text-left">Title</th>
@@ -52,11 +53,11 @@ const PendingAssignment = () => {
               {submissions.map((submission) => (
                 <tr
                   key={submission._id}
-                  className="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-[#252b3a]"
+                  className="border-b dark:border-gray-500 hover:bg-gray-50 dark:hover:bg-[#252b3a]"
                 >
-                  <td className="py-2 px-4">{submission.assignmentTitle || "N/A"}</td>
-                  <td className="py-2 px-4">{submission.assignmentMarks || "N/A"}</td>
-                  <td className="py-2 px-4">{submission.studentEmail}</td>
+                  <td className="py-2 px-4">{submission.title || "N/A"}</td>
+                  <td className="py-2 px-4">{submission.marks || "N/A"}</td>
+                  <td className="py-2 px-4">{submission.name}</td>
                   <td className="py-2 px-4">
                     <button
                       onClick={() => navigate(`/give-mark/${submission._id}`)}
