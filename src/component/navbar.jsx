@@ -77,7 +77,7 @@ const Navbar = ({ toggleTheme }) => {
             <>
               {/* Profile Picture + Dropdown */}
              
-              <div className="dropdown dropdown-end">
+              <div className="dropdown dropdown-end ">
                 <div tabIndex={0} role="button" className="m-1">
                    <div className="relative">
                 <img
@@ -90,7 +90,7 @@ const Navbar = ({ toggleTheme }) => {
                 <div
                   onMouseEnter={() => setDropdownOpen(true)}
                   onMouseLeave={() => setDropdownOpen(false)}
-                  className={`absolute right-0 top-12 bg-gray-800 border border-[#fdc800] p-3 rounded shadow-md w-56 z-50 transform transition-all duration-300 ${isDropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+                  className={`absolute left-0 top-12 bg-gray-800 border border-[#fdc800] p-3 rounded shadow-md w-56 z-50 transform transition-all duration-300 ${isDropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
                     }`}
                 >
                   <p className="text-white mb-2"> {user.displayName}</p>

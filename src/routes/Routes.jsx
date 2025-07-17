@@ -12,44 +12,62 @@ import ViewAssignment from "../pages/ViewAssignment";
 import SubmitForm from "../pages/SubmitForm";
 import PendingAssignment from "../pages/PendingAssignment";
 import GiveMark from "../pages/GiveMark";
+import MyAssignments from "../pages/MyAssignments";
+import Private from "../context/Private";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
     children: [
-        {
-            index: true,
-            Component: Home
-        },
-        {
-          path: "create-assignment",
-          Component: CreateAssignment
-        },
-        {
-          path: "assignments",
-          Component: Assignment
-        },
-        {
-          path: "assignments/update/:id",
-          Component: UpdatedAssignment
-        },
-        {
-          path: "/assignments/view/:id",
-          Component: ViewAssignment
-        },
-        {
-          path: "/assignments/:id/submit",
-          Component: SubmitForm
-        },
-        {
-          path: "/pending",
-          Component: PendingAssignment
-        },
-        {
-          path: "/give-mark/:id",
-          Component: GiveMark
-        }
+      {
+        index: true,
+        Component: Home
+      },
+      {
+        path: "create-assignment",
+        Component: () => (
+          <Private>
+            <CreateAssignment />
+          </Private>
+        )
+      },
+      {
+        path: "assignments",
+        Component: Assignment
+      },
+      {
+        path: "assignments/update/:id",
+        Component: UpdatedAssignment
+      },
+      {
+        path: "/assignments/view/:id",
+        Component: ViewAssignment
+      },
+      {
+        path: "/assignments/:id/submit",
+        Component: SubmitForm
+      },
+      {
+        path: "/pending",
+        Component: () => (
+          <Private>
+            <PendingAssignment />
+          </Private>
+        )
+      },
+      {
+        path: "/give-mark/:id",
+        Component: GiveMark
+      },
+      {
+        path: "my-attempts",
+        Component: () => (
+          <Private>
+            <MyAssignments />
+          </Private>
+        )
+      }
     ]
   },
   {

@@ -1,7 +1,8 @@
 import React, { } from 'react';
-import { AuthContext } from './AuthProvider';
-import Loading from '../Component/Loading';
+// import { AuthContext } from './AuthProvider';
 import { Navigate, useLocation } from 'react-router';
+import Loading from '../component/Loading';
+import { AuthContext } from './AuthContext';
 
 
 const Private = ({ children }) => {
