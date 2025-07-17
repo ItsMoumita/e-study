@@ -33,7 +33,7 @@ const SubmitForm = () => {
     };
     fetchAssignment();
   }, [id]);
-console.log(assignment)
+// console.log(assignment)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -49,7 +49,7 @@ console.log(assignment)
       submittedAt: new Date(),
     };
 
-    console.log(submission);
+    // console.log(submission);
 
     try {
       const res = await axios.post("http://localhost:3000/submissions", submission, {

@@ -7,6 +7,7 @@ import Loading from "../component/Loading";
 
 const GiveMark = () => {
   const { id } = useParams(); // submission ID
+  console.log(id);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -18,7 +19,13 @@ const GiveMark = () => {
   useEffect(() => {
     const fetchSubmission = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/submissions/${id}`);
+        const res = await axios.get(`http://localhost:3000/submissions/${id}`,
+            {
+                headers: {
+                Authorization: `Bearer ${user.accessToken}`,
+                },
+            }
+        );
         setSubmission(res.data);
       } catch (err) {
         Swal.fire("Error", "Failed to fetch submission data", "error");

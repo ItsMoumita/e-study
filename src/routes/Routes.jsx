@@ -11,6 +11,7 @@ import UpdatedAssignment from "../pages/UpdatedAssignment";
 import ViewAssignment from "../pages/ViewAssignment";
 import SubmitForm from "../pages/SubmitForm";
 import PendingAssignment from "../pages/PendingAssignment";
+import GiveMark from "../pages/GiveMark";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +47,8 @@ export const router = createBrowserRouter([
           Component: PendingAssignment
         },
         {
-          path: "/give-mark/:id"
+          path: "/give-mark/:id",
+          Component: GiveMark
         }
     ]
   },
