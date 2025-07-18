@@ -7,7 +7,6 @@ import Loading from "../component/Loading";
 
 const GiveMark = () => {
   const { id } = useParams(); // submission ID
-  console.log(id);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -19,7 +18,7 @@ const GiveMark = () => {
   useEffect(() => {
     const fetchSubmission = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/submissions/${id}`,
+        const res = await axios.get(`https://e-study-server-nine.vercel.app/submissions/${id}`,
             {
                 headers: {
                 Authorization: `Bearer ${user.accessToken}`,
@@ -50,7 +49,7 @@ const GiveMark = () => {
 
     try {
       const res = await axios.patch(
-        `http://localhost:3000/submissions/${id}`,
+        `https://e-study-server-nine.vercel.app/submissions/${id}`,
         {
           mark: Number(givenMark),
           feedback,

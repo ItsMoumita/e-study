@@ -13,7 +13,7 @@ const ViewAssignment = () => {
   useEffect(() => {
     const fetchAssignment = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/assignments/${id}`);
+        const res = await axios.get(`https://e-study-server-nine.vercel.app/assignments/${id}`);
         setAssignment(res.data);
       } catch (err) {
         Swal.fire("Error", "Failed to load assignment", "error");

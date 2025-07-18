@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { h1 } from "framer-motion/client";
 
 const faqs = [
   {
@@ -63,6 +64,7 @@ const FaqSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
+      <h1 className="text-4xl text-center mb-6 font-bold text-[#002147] dark:text-white">FAQ Section</h1>
       <motion.div className="w-11/12 mx-auto lg:w-1/2 space-y-4">
         {faqs.map((faq, index) => (
           <motion.div

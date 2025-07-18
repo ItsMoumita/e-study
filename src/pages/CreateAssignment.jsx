@@ -32,7 +32,7 @@ const CreateAssignment = () => {
 
    try {
   setLoading(true);
-   await axios.post("http://localhost:3000/assignments", assignment).then((res) => res.data);
+   await axios.post("https://e-study-server-nine.vercel.app/assignments", assignment).then((res) => res.data);
    
    
 
@@ -79,7 +79,7 @@ const CreateAssignment = () => {
         <input
           type="text"
           placeholder="Enter assignment title"
-          className="w-full p-2 rounded border focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
+          className="w-full p-2 rounded border-1 border-black focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
@@ -88,7 +88,7 @@ const CreateAssignment = () => {
         {/* Description */}
         <textarea
           placeholder="Enter description"
-          className="w-full p-2 rounded border focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
+          className="w-full p-2 rounded border-1 border-black focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
@@ -98,7 +98,7 @@ const CreateAssignment = () => {
         <input
           type="number"
           placeholder="Total marks"
-          className="w-full p-2 rounded border focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
+          className="w-full p-2 rounded border-1 border-black focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
           value={marks}
           onChange={(e) => setMarks(e.target.value)}
           required
@@ -108,7 +108,7 @@ const CreateAssignment = () => {
         <input
           type="url"
           placeholder="Enter image URL"
-          className="w-full p-2 rounded border focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
+          className="w-full p-2 rounded border-1 border-black focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
           value={thumbnail}
           onChange={(e) => setThumbnail(e.target.value)}
           required
@@ -130,7 +130,7 @@ const CreateAssignment = () => {
           selected={dueDate}
           onChange={(date) => setDueDate(date)}
           placeholderText="Select due date"
-          className="w-full p-2 rounded border focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
+          className="w-full p-2 rounded border-1 border-black focus:outline-none focus:ring-2 focus:ring-[#fdc800] placeholder-gray-400"
           dateFormat="MMMM d, yyyy"
           minDate={new Date()}
           required

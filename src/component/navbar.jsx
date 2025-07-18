@@ -177,15 +177,7 @@ const Navbar = ({ toggleTheme }) => {
                     }`}
                 >
                   <p className="text-white mb-2"> {user.displayName}</p>
-                  {/* <NavLink to="/create-assignment" className={navLinkClass}>
-                    Create Assignments
-                  </NavLink>
-                  <NavLink to="/my-attempts" className={navLinkClass}>
-                    My Attempted Assignments
-                  </NavLink>
-                  <NavLink to="/pending" className={navLinkClass}>
-                    Pending Assignments
-                  </NavLink> */}
+                  
                 </div>
               </div>
               

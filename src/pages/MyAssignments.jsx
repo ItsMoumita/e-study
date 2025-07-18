@@ -14,7 +14,7 @@ const MyAssignments = () => {
       try {
         // const token = await user.getIdToken();
 
-        const res = await axios.get(`http://localhost:3000/submissions/user/${user.email}`, {
+        const res = await axios.get(`https://e-study-server-nine.vercel.app/submissions/user/${user.email}`, {
           headers: {
             Authorization: `Bearer ${user.accessToken}`,
           },

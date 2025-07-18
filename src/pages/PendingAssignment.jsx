@@ -12,7 +12,7 @@ const PendingAssignment = () => {
 
   const fetchPendingSubmissions = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/submissions");
+      const res = await axios.get("https://e-study-server-nine.vercel.app/submissions");
     //   console.log(res.data);
       const pending = res.data.filter((item) => item.status === "pending");
       setSubmissions(pending);

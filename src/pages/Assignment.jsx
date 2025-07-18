@@ -16,7 +16,7 @@ const Assignment = () => {
     setLoading(true);
     try {
       const query = selectedLevel ? `?level=${selectedLevel}` : "";
-      const res = await axios.get(`http://localhost:3000/assignments${query}`);
+      const res = await axios.get(`https://e-study-server-nine.vercel.app/assignments${query}`);
       setAssignments(res.data);
     } catch (err) {
       console.error("Error fetching assignments:", err);
@@ -47,7 +47,7 @@ const Assignment = () => {
 
     if (confirm.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/assignments/${id}`, {
+        await axios.delete(`https://e-study-server-nine.vercel.app/assignments/${id}`, {
           headers: {
             Authorization: `Bearer ${user.accessToken}`,
           },
@@ -77,12 +77,12 @@ const Assignment = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="py-10 px-4 max-w-[1520px] mx-auto">
+    <div className="py-10 px-4 xl:px-32 mx-auto bg-white dark:bg-gray-900/80">
       <div className="font-bold text-xl mb-12 w-full mx-auto text-center text-[#002147] dark:text-white">
         <select
           value={selectedLevel}
           onChange={(e) => setSelectedLevel(e.target.value)}
-          className="border border-gray-300 dark:border-gray-600 dark:bg-[#1a1f2e] py-2 px-12 rounded"
+          className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a1f2e] py-2 px-12 rounded"
         >
           <option value="">All Levels</option>
           <option value="easy">Easy</option>
@@ -97,7 +97,7 @@ const Assignment = () => {
         {assignments.map((item) => (
           <div
             key={item._id}
-            className="bg-white dark:bg-[#1a1f2e] rounded-lg shadow-md p-4 flex items-center justify-between gap-4"
+            className="bg-white/80 dark:bg-[#293047] rounded-lg shadow-md p-4 flex items-center justify-between gap-4"
           >
             {/* Image */}
             <div className="w-2/3">

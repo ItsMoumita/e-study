@@ -57,7 +57,7 @@ const createUser = (email, password) => {
         setUser(null);
       }
        
-     axios.get("http://localhost:3000/", {
+     axios.get("https://e-study-server-nine.vercel.app/", {
         headers: {
           Authorization: `Bearer ${currentUser?.accessToken}`,
         }
