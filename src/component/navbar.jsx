@@ -57,6 +57,9 @@ const Navbar = ({ toggleTheme }) => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6 md:gap-12 text-lg">
+          <NavLink to="/" className={navLinkClass}>
+            Home
+          </NavLink>
           <NavLink to="/assignments" className={navLinkClass}>
             Assignments
           </NavLink>
@@ -142,6 +145,9 @@ const Navbar = ({ toggleTheme }) => {
 
           {!user ? (
             <>
+              <NavLink to="/" className={navLinkClass}>
+                Home
+              </NavLink>
               <NavLink to="/assignments" className={navLinkClass}>
                 Assignments
               </NavLink>
@@ -183,6 +189,9 @@ const Navbar = ({ toggleTheme }) => {
                 </div>
               </div>
               
+              <NavLink to="/" className={navLinkClass}>
+                Home
+              </NavLink>
               <NavLink to="/assignments" className={navLinkClass}>
                 Assignments
               </NavLink>
