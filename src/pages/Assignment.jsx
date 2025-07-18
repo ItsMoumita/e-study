@@ -78,11 +78,11 @@ const Assignment = () => {
 
   return (
     <div className="py-10 px-4 max-w-[1520px] mx-auto">
-      <div className="font-bold mb-12 w-full mx-auto text-center text-[#002147] dark:text-white">
+      <div className="font-bold text-xl mb-12 w-full mx-auto text-center text-[#002147] dark:text-white">
         <select
           value={selectedLevel}
           onChange={(e) => setSelectedLevel(e.target.value)}
-          className="border border-gray-300 dark:border-gray-600 dark:bg-[#1a1f2e] p-2 rounded"
+          className="border border-gray-300 dark:border-gray-600 dark:bg-[#1a1f2e] py-2 px-12 rounded"
         >
           <option value="">All Levels</option>
           <option value="easy">Easy</option>
