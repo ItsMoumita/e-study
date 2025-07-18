@@ -90,20 +90,19 @@ const GiveMark = () => {
           <strong>Examinee Email:</strong> {submission.studentEmail}
         </p>
         <p className="dark:text-white">
-          <strong>Assignment Title:</strong> {submission.assignmentTitle || "N/A"}
+          <strong>Assignment Title:</strong> {submission.title || "N/A"}
         </p>
         <p className="dark:text-white">
           <strong>Submitted Note:</strong> {submission.note || "No note provided"}
         </p>
         <p className="dark:text-white">
-          <strong>Google Docs Link:</strong>{" "}
           <a
             href={submission.submissionLink}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 underline"
           >
-            Open Link
+            Google Docs Link
           </a>
         </p>
 
