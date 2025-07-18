@@ -10,10 +10,13 @@ const Assignment = () => {
   const { user } = useContext(AuthContext);
   const [assignments, setAssignments] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedLevel, setSelectedLevel] = useState("");
 
-  const allAssignments = async () => {
+  const fetchAssignments = async () => {
+    setLoading(true);
     try {
-      const res = await axios.get("http://localhost:3000/assignments");
+      const query = selectedLevel ? `?level=${selectedLevel}` : "";
+      const res = await axios.get(`http://localhost:3000/assignments${query}`);
       setAssignments(res.data);
     } catch (err) {
       console.error("Error fetching assignments:", err);
@@ -23,7 +26,6 @@ const Assignment = () => {
   };
 
   const handleDelete = async (id, email) => {
-    
     if (user?.email !== email) {
       return Swal.fire({
         icon: "error",
@@ -46,9 +48,9 @@ const Assignment = () => {
     if (confirm.isConfirmed) {
       try {
         await axios.delete(`http://localhost:3000/assignments/${id}`, {
-            headers: {
-                Authorization: `Bearer ${user.accessToken}`,
-            }
+          headers: {
+            Authorization: `Bearer ${user.accessToken}`,
+          },
         });
         Swal.fire({
           icon: "success",
@@ -56,7 +58,7 @@ const Assignment = () => {
           text: "Assignment deleted successfully.",
           confirmButtonColor: "#fdc800",
         });
-        allAssignments();
+        fetchAssignments();
       } catch (err) {
         Swal.fire({
           icon: "error",
@@ -69,17 +71,28 @@ const Assignment = () => {
   };
 
   useEffect(() => {
-    allAssignments();
-  }, []);
+    fetchAssignments();
+  }, [selectedLevel]);
 
   if (loading) return <Loading />;
 
   return (
     <div className="py-10 px-4 max-w-[1520px] mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-center text-[#002147] dark:text-white">
-        All Assignments
-      </h2>
+      <div className="font-bold mb-12 w-full mx-auto text-center text-[#002147] dark:text-white">
+        <select
+          value={selectedLevel}
+          onChange={(e) => setSelectedLevel(e.target.value)}
+          className="border border-gray-300 dark:border-gray-600 dark:bg-[#1a1f2e] p-2 rounded"
+        >
+          <option value="">All Levels</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
 
+
+      {/* 📦 Assignments Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {assignments.map((item) => (
           <div
