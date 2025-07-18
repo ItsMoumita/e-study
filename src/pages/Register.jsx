@@ -107,8 +107,8 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-[100vh] relative flex items-center justify-center bg-[#f0f4ff] py-10">
-             <div className="absolute top-20 left-1/2 -translate-x-1/2">
+        <div className="min-h-[100vh] flex flex-col gap-12 items-center justify-center bg-[#f0f4ff] py-10">
+             <div className=" top-20 left-1/2 -translate-x-1/2">
                             <Link
                                 to="/"
                                 className="text-[#002147] text-2xl hover:text-[#fdc800] font-semibold flex items-center gap-1 transition-colors"
