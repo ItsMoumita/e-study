@@ -14,6 +14,7 @@ import PendingAssignment from "../pages/PendingAssignment";
 import GiveMark from "../pages/GiveMark";
 import MyAssignments from "../pages/MyAssignments";
 import Private from "../context/Private";
+import Error from "../pages/Error";
 
 export const router = createBrowserRouter([
   {
@@ -77,5 +78,9 @@ export const router = createBrowserRouter([
   {
     path: "register",
     Component: Register
+  },
+  {
+    path: "*",
+    Component: Error
   }
 ]);

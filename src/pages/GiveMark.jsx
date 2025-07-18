@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Loading from "../component/Loading";
+import { Helmet } from "react-helmet";
 
 const GiveMark = () => {
   const { id } = useParams(); // submission ID
@@ -27,6 +28,7 @@ const GiveMark = () => {
         );
         setSubmission(res.data);
       } catch (err) {
+        console.log(err)
         Swal.fire("Error", "Failed to fetch submission data", "error");
       } finally {
         setLoading(false);
@@ -76,6 +78,9 @@ const GiveMark = () => {
 
   return (
     <div className="min-h-[calc(100vh-160px)] flex items-center justify-center bg-[#f9f9f9] dark:bg-[#0b0f1a] px-4 py-10">
+      <Helmet>
+        <title>Evaluate Assignment | E-Study</title>
+      </Helmet>
       <div className="bg-white dark:bg-[#1a1f2e] p-8 rounded-xl shadow-lg w-full max-w-xl space-y-4">
         <h2 className="text-2xl font-bold text-[#002147] dark:text-white mb-4">
           Evaluate Assignment

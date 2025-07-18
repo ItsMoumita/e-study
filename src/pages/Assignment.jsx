@@ -5,6 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
 import Loading from "../component/Loading";
+import { Helmet } from "react-helmet";
 
 const Assignment = () => {
   const { user } = useContext(AuthContext);
@@ -78,6 +79,9 @@ const Assignment = () => {
 
   return (
     <div className="py-10 px-4 xl:px-32 mx-auto bg-white dark:bg-gray-900/80">
+      <Helmet>
+        <title>All Assignments | E-Study</title>
+      </Helmet>
       <div className="font-bold text-xl mb-12 w-full mx-auto text-center text-[#002147] dark:text-white">
         <select
           value={selectedLevel}

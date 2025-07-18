@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
+import { Helmet } from "react-helmet";
 
 const CreateAssignment = () => {
     const {user} = useContext(AuthContext);
@@ -67,6 +68,9 @@ const CreateAssignment = () => {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center bg-[#f9f9f9] dark:bg-[#0b0f1a] py-10 px-4">
+      <Helmet>
+        <title>Create Assignment | E-Study</title>
+      </Helmet>
       <form
         onSubmit={handleSubmit}
         className="bg-white dark:bg-[#1a1f2e] rounded-lg shadow-lg p-8 w-full max-w-xl space-y-6"

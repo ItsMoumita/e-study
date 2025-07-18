@@ -3,6 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Loading from "../component/Loading";
+import { Helmet } from "react-helmet";
 
 const MyAssignments = () => {
   const { user } = useContext(AuthContext);
@@ -22,6 +23,7 @@ const MyAssignments = () => {
 
         setSubmissions(res.data);
       } catch (err) {
+        console.error("Error fetching submissions:", err);
         Swal.fire("Error", "Failed to fetch your assignments", "error");
       } finally {
         setLoading(false);
@@ -37,6 +39,9 @@ const MyAssignments = () => {
 
   return (
     <div className="px-4 py-8 max-w-5xl mx-auto min-h-[calc(100vh-160px)]">
+      <Helmet>
+        <title>My Assignments | E-Study</title>
+      </Helmet>
       <h2 className="text-2xl font-bold mb-6 text-center text-[#002147] dark:text-white">
         My Submitted Assignments
       </h2>

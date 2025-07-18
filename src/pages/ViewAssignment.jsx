@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Loading from '../component/Loading';
+import { Helmet } from 'react-helmet';
 
 const ViewAssignment = () => {
       const { id } = useParams();
@@ -16,6 +17,7 @@ const ViewAssignment = () => {
         const res = await axios.get(`https://e-study-server-nine.vercel.app/assignments/${id}`);
         setAssignment(res.data);
       } catch (err) {
+        console.error("Error fetching assignment:", err);
         Swal.fire("Error", "Failed to load assignment", "error");
       } finally {
         setLoading(false);
@@ -27,7 +29,11 @@ const ViewAssignment = () => {
 
   if (loading) return <Loading></Loading>
     return (
+    
       <div className="min-h-[calc(100vh-163px)] flex items-center justify-center bg-[#f9f9f9] dark:bg-[#0b0f1a] px-4 py-10">
+        <Helmet>
+          <title>View Assignment | E-Study</title>
+        </Helmet>
       <div className="flex flex-col md:flex-row items-center bg-white dark:bg-[#1a1f2e] rounded-2xl shadow-xl p-6 md:p-10 max-w-5xl w-full">
         {/* Left side image */}
         <div className="flex-shrink-0">

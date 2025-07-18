@@ -3,6 +3,7 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../context/AuthContext';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -95,19 +96,15 @@ const Register = () => {
                 confirmButtonColor: "#002147",
             });;
         } catch (erorr) {
-            //     await Swal.fire({
-            //                  title: "Error!",
-            //                  text: error.message || "Google login failed.",
-            //                  icon: "error",
-            //                  background: "white/70",
-            //                  color: "rgba(6,64,43,0.7)",
-            //                  confirmButtonColor: "rgba(6,64,43,0.7)",
-            //              });;
+          console.log(erorr);
         }
     };
 
     return (
         <div className="min-h-[100vh] flex flex-col gap-12 items-center justify-center bg-[#f0f4ff] py-10">
+            <Helmet>
+                <title>Register | E-Study</title>
+            </Helmet>
              <div className=" top-20 left-1/2 -translate-x-1/2">
                             <Link
                                 to="/"

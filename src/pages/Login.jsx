@@ -3,6 +3,7 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../context/AuthContext';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -86,6 +87,9 @@ const Login = () => {
 
     return (
         <div className="min-h-[100vh]  flex flex-col gap-12 items-center justify-center bg-[#f0f4ff] py-10">
+            <Helmet>
+                <title>Login | E-Study</title>
+            </Helmet>
             <div className=" top-20 left-1/2 -translate-x-1/2">
                 <Link
                     to="/"

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Loading from "../component/Loading";
 import { sub } from "framer-motion/client";
+import { Helmet } from "react-helmet";
 
 const PendingAssignment = () => {
   const [submissions, setSubmissions] = useState([]);
@@ -18,6 +19,7 @@ const PendingAssignment = () => {
       setSubmissions(pending);
     //   console.log(pending);
     } catch (err) {
+      console.error("Error fetching submissions:", err);
       Swal.fire("Error", "Failed to load submissions", "error");
     } finally {
       setLoading(false);
@@ -32,6 +34,9 @@ const PendingAssignment = () => {
 
   return (
     <div className="py-10 px-4 max-w-6xl mx-auto">
+      <Helmet>
+        <title>Pending Assignments | E-Study</title>
+      </Helmet>
       <h2 className="text-3xl font-bold mb-6 text-center text-[#002147] dark:text-white">
         Pending Submissions
       </h2>

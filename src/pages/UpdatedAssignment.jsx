@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import Loading from "../component/Loading";
+import { Helmet } from "react-helmet";
 
 const UpdatedAssignment = () => {
 
@@ -26,6 +27,7 @@ const UpdatedAssignment = () => {
         const res = await axios.get(`https://e-study-server-nine.vercel.app/assignments/${id}`);
         setAssignment(res.data);
       } catch (err) {
+        console.error("Error fetching assignment:", err);
         Swal.fire("Error", "Failed to load assignment", "error");
       } finally {
         setLoading(false);
@@ -68,6 +70,9 @@ const UpdatedAssignment = () => {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center bg-[#f9f9f9] dark:bg-[#0b0f1a] py-10 px-4">
+      <Helmet>
+        <title>Update Assignment | E-Study</title>
+      </Helmet>
       <form
         onSubmit={handleSubmit}
         className="bg-white dark:bg-[#1a1f2e] rounded-lg shadow-lg p-8 w-full max-w-xl space-y-6"
