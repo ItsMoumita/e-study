@@ -13,7 +13,7 @@ const SubmitForm = () => {
      const { id } = useParams(); // assignment ID
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-
+// console.log(user);
   const [assignment, setAssignment] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -46,7 +46,7 @@ const SubmitForm = () => {
       note,
       title: assignment.title,
       marks: assignment.marks,
-      name: assignment.name,
+      name: user.displayName,
       status: "pending",
       submittedAt: new Date(),
     };

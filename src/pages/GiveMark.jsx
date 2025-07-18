@@ -40,8 +40,9 @@ const GiveMark = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+     
     if (submission.studentEmail === user.email) {
+    
       return Swal.fire("Error", "You can't evaluate your own submission!", "error");
     }
 
