@@ -2,7 +2,7 @@
 
 **E-Study** is a full-featured assignment management web application that enables students to attempt assignments and evaluators to create, manage, and grade them. It offers a seamless user experience with protected routes, Google & email/password authentication, assignment filtering, and real-time validation.
 
-🌐 **Live Site:** _[Coming Soon]_  
+🌐 **Live Site:** https://e-study-efba6.web.app/
 
 ---
 
