@@ -78,7 +78,7 @@ const Assignment = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="py-10 px-6 lg:px-18 xl:px-32 mx-auto bg-white dark:bg-gray-900/80">
+    <div className="py-10 px-6 lg:px-18 xl:px-32 mx-auto bg-[#f0f4ff] dark:bg-gray-900/80">
       <Helmet>
         <title>All Assignments | E-Study</title>
       </Helmet>

@@ -68,7 +68,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="bg-[#f0f4ff] dark:bg-[#1F2937] border-t border-b border-blue-300 dark:border-blue-600  pb-6 px-6 md:px-12">
+    <div className="bg-[#f0f4ff] dark:bg-gray-900/80 border-t border-b border-blue-300 dark:border-blue-600  pb-6 px-6 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

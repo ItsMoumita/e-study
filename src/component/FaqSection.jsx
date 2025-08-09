@@ -57,7 +57,7 @@ const FaqSection = () => {
 
   return (
     <motion.div
-      className="bg-[#f0f4ff] dark:bg-[#1F2937] py-20 px-6 lg:px-20"
+      className="bg-[#f0f4ff] dark:bg-gray-900/80 py-20 px-6 lg:px-20"
       id="faq"
       variants={containerVariants}
       initial="hidden"

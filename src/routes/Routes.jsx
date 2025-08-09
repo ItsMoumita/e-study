@@ -16,6 +16,7 @@ import MyAssignments from "../pages/MyAssignments";
 import Private from "../context/Private";
 import Error from "../pages/Error";
 import Courses from "../pages/Courses";
+import Profile from "../pages/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,11 @@ export const router = createBrowserRouter([
       {
         path: "courses",
         Component: Courses
+      },
+      
+      {
+        path: "profile",
+        Component: Profile
       },
       
       {

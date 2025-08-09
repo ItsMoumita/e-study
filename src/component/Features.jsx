@@ -38,7 +38,7 @@ const itemVariants = {
 const Features = () => {
   return (
     <motion.section
-      className= "bg-[#f0f4ff] dark:bg-[#1F2937] py-16 pl-6 pr-6 md:pl-12 md:pr-12"
+      className= "bg-[#f0f4ff] dark:bg-gray-900/80 py-16 pl-6 pr-6 md:pl-12 md:pr-12"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -52,7 +52,7 @@ const Features = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          STUDY FEATURES
+          Study Features 
         </motion.h2>
 
         <motion.p

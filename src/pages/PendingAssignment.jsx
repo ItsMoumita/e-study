@@ -33,11 +33,11 @@ const PendingAssignment = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="py-10 px-4 max-w-6xl mx-auto ">
+    <div className="bg-[#f0f4ff] dark:bg-gray-900/80 py-10 px-4  min-h-[92vh]">
       <Helmet>
         <title>Pending Assignments | E-Study</title>
       </Helmet>
-      <h2 className="text-3xl font-bold mb-6 text-center text-[#002147] dark:text-white">
+      <h2 className="text-4xl font-bold mb-6 text-center text-[#002147] dark:text-white">
         Pending Submissions
       </h2>
 
@@ -45,7 +45,7 @@ const PendingAssignment = () => {
         <p className="text-center text-gray-600 dark:text-gray-300">No pending assignments found.</p>
       ) : (
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm bg-white dark:bg-[#373f55] border rounded-lg">
+          <table className=" mx-auto text-lg bg-white dark:bg-[#373f55] border rounded-lg">
             <thead className="bg-[#fdc800] text-black">
               <tr>
                 <th className="py-3 px-4 text-left">Title</th>

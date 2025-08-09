@@ -12,7 +12,7 @@ const Courses = () => {
   }, []);
 
   return (
-    <div className="py-10 px-6 lg:px-18 xl:px-32 mx-auto bg-white dark:bg-gray-900/80">
+    <div className="py-10 px-6 lg:px-18 xl:px-32 mx-auto bg-[#f0f4ff] dark:bg-gray-900/80">
       <h1 className="text-5xl font-bold mb-8 md:mb-12 text-center text-[#002147] dark:text-white">
         All Courses
       </h1>

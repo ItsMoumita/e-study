@@ -117,6 +117,9 @@ const Navbar = ({ toggleTheme }) => {
             </>
           ) : (
             <>
+              <NavLink to="/profile" className={navLinkClass}>
+                Profile
+              </NavLink>
               {/* Profile with hover dropdown: show name + logout */}
               <div className="dropdown dropdown-end dropdown-hover">
                 <div tabIndex={0} role="button" className="m-1">
@@ -185,6 +188,7 @@ const Navbar = ({ toggleTheme }) => {
             </>
           ) : (
             <>
+             
               <div className="flex items-center gap-3 mt-2">
                 <img
                   src={user.photoURL}
@@ -193,6 +197,9 @@ const Navbar = ({ toggleTheme }) => {
                 />
                 <span className="text-white">{user.displayName}</span>
               </div>
+               <NavLink to="/profile" className={navLinkClass}>
+                Profile
+              </NavLink>
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);

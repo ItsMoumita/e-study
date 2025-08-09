@@ -18,7 +18,7 @@ const HomeCourses = () => {
 
 
   return (
-    <div className="px-6 md:px-12 py-10 bg-[#f0f4ff] dark:bg-[#1F2937]">
+    <div className="px-6 md:px-12 py-10 bg-[#f0f4ff] dark:bg-gray-900/80">
       <h1 className="text-4xl font-bold mt-8 mb-8 md:mb-14 text-center">Popular Courses</h1>
       <div className="px-6 md:px-12 grid gap-6 md:grid-cols-3">
         {courses.map((course) => (
