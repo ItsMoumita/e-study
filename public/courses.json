@@ -3,63 +3,63 @@
     "id": 1,
     "title": "React Basics",
     "description": "Learn the fundamentals of React, including components, state, and props.",
-    "image": "/images/react-basics.jpg",
+    "image": "https://i.ibb.co.com/nqDmtChr/1-Wfh-Vi-ON2evom-OK2tw09-Au-Q.jpg",
     "duration": "4 weeks"
   },
   {
     "id": 2,
     "title": "Advanced React",
     "description": "Dive deeper into hooks, context, and performance optimization.",
-    "image": "/images/advanced-react.jpg",
+    "image": "https://i.ibb.co.com/23nChs0x/eba1c4863eb1a6576514ccf2b138f6f5b53871e9.png",
     "duration": "6 weeks"
   },
   {
     "id": 3,
     "title": "JavaScript Essentials",
     "description": "Master the core concepts of JavaScript for web development.",
-    "image": "/images/js-essentials.jpg",
+    "image": "https://i.ibb.co.com/wZD1p7CN/1468694-d595-2.jpg",
     "duration": "5 weeks"
   },
   {
     "id": 4,
     "title": "Node.js Fundamentals",
     "description": "Learn to build scalable backend applications using Node.js.",
-    "image": "/images/nodejs.jpg",
+    "image": "https://i.ibb.co.com/gbnpg5yp/Best-Way-to-Learn-Node-JS-A-Complete-Roadmap.png",
     "duration": "6 weeks"
   },
   {
     "id": 5,
     "title": "MongoDB for Beginners",
     "description": "Understand MongoDB CRUD operations and schema design.",
-    "image": "/images/mongodb.jpg",
+    "image": "https://i.ibb.co.com/7JNsjTq1/mongodb-for-beginners.png",
     "duration": "3 weeks"
   },
   {
     "id": 6,
     "title": "Full-Stack Development",
     "description": "Build complete web apps with React, Node.js, and MongoDB.",
-    "image": "/images/fullstack.jpg",
+    "image": "https://i.ibb.co.com/Q7BV2gFK/untitlsssssed.png",
     "duration": "8 weeks"
   },
   {
     "id": 7,
     "title": "HTML & CSS Mastery",
     "description": "Design beautiful, responsive web pages.",
-    "image": "/images/html-css.jpg",
+    "image": "https://i.ibb.co.com/nsbj7FVQ/4732456.png",
     "duration": "3 weeks"
   },
   {
     "id": 8,
     "title": "Tailwind CSS",
     "description": "Style modern web apps quickly with Tailwind CSS.",
-    "image": "/images/tailwind.jpg",
+    "image": "https://i.ibb.co.com/272q0pXF/1-f27-S-q-QF2-CAASt5b-Owqg.png",
     "duration": "2 weeks"
   },
   {
     "id": 9,
     "title": "Express.js API Development",
     "description": "Create powerful APIs with Express.js.",
-    "image": "/images/express.jpg",
+    "image": "https://i.ibb.co.com/dsT9ywhg/nodejs-and-expressjs-rest-api-development.jpg",
     "duration": "4 weeks"
   },
   {
