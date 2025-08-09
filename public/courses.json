@@ -66,42 +66,42 @@
     "id": 10,
     "title": "Firebase Authentication",
     "description": "Integrate secure authentication into your projects.",
-    "image": "/images/firebase.jpg",
+    "image": "https://i.ibb.co.com/LhcTSMLZ/Firebase-Authentication-in-Node-js.jpg",
     "duration": "2 weeks"
   },
   {
     "id": 11,
     "title": "TypeScript Basics",
     "description": "Enhance your JavaScript with strong typing.",
-    "image": "/images/typescript.jpg",
+    "image": "https://i.ibb.co.com/bMbKXsFq/1-y-B18tvj-Hq-DI06f-SQOby6-A.png",
     "duration": "3 weeks"
   },
   {
     "id": 12,
     "title": "Next.js Fundamentals",
     "description": "Build SEO-friendly, server-rendered React apps.",
-    "image": "/images/nextjs.jpg",
+    "image": "https://i.ibb.co.com/0pH9MR5X/0-1ld-Roi-No-CXA6ht-Gf.png",
     "duration": "5 weeks"
   },
   {
     "id": 13,
     "title": "Git & GitHub",
     "description": "Master version control and collaboration.",
-    "image": "/images/git.jpg",
+    "image": "https://i.ibb.co.com/Fbwd85h1/68747470733a2f2f7777772e66726565636f646563616d702e6f72672f6e6577732f636f6e74656e742f696d616765732f32.png",
     "duration": "2 weeks"
   },
   {
     "id": 14,
     "title": "REST API Design",
     "description": "Design and implement RESTful APIs.",
-    "image": "/images/restapi.jpg",
+    "image": "https://i.ibb.co.com/ds3mQsMG/https-substack-post-media-s3-amazonaws-com-public-images-3605e817-3083-4fbe-9faa-bc626cfb497a-1938x1.png",
     "duration": "3 weeks"
   },
   {
     "id": 15,
     "title": "UI/UX Design Basics",
     "description": "Learn design principles to create great user experiences.",
-    "image": "/images/uiux.jpg",
+    "image": "https://i.ibb.co.com/Q7fQw2jP/blog-1695099937.png",
     "duration": "3 weeks"
   }
 ]

@@ -6,31 +6,44 @@ const Courses = () => {
 
   useEffect(() => {
     axios
-      .get("/courses.json") 
+      .get("/courses.json") // fetching from public folder
       .then((res) => setCourses(res.data))
       .catch((err) => console.error("Error loading courses:", err));
   }, []);
 
   return (
-    <div className="px-6 py-10 bg-white min-h-screen">
-      <h1 className="text-3xl font-bold mb-8 text-center">All Courses</h1>
-      <div className="grid gap-6 md:grid-cols-3">
+    <div className="py-10 px-6 lg:px-18 xl:px-32 mx-auto bg-white dark:bg-gray-900/80">
+      <h1 className="text-3xl font-bold mb-8 text-center text-[#002147] dark:text-white">
+        All Courses
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (
           <div
             key={course.id}
-            className="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-yellow-500 hover:border-yellow-500 transition-all duration-300"
+            className="bg-white/80  dark:bg-[#293047] rounded-lg border border-gray-200 dark:border-gray-700 shadow transition-all duration-300 hover:border-[#fdc800] hover:shadow-[0_4px_20px_rgba(253,200,0,0.4)] p-4 flex flex-col"
           >
-            <img
-              src={course.image}
-              alt={course.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-lg font-bold">{course.title}</h2>
-              <p className="text-gray-600 text-sm">{course.description}</p>
-              <span className="text-yellow-600 font-medium">
-                Duration: {course.duration}
-              </span>
+            {/* Course Image */}
+            <div className="w-full">
+              <img
+                src={course.image}
+                alt={course.title}
+                className="rounded-lg w-full h-[150px] object-cover"
+              />
+            </div>
+
+            {/* Course Info */}
+            <div className="mt-4 space-y-2 text-[#002147] dark:text-white">
+              <p className="text-sm font-semibold">
+                Title: <span className="font-normal">{course.title}</span>
+              </p>
+              <p className="text-sm font-semibold">
+                Duration: <span className="font-normal">{course.duration}</span>
+              </p>
+              <p className="text-sm font-semibold">
+                Description:{" "}
+                <span className="font-normal">{course.description}</span>
+              </p>
             </div>
           </div>
         ))}

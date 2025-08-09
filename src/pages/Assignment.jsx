@@ -78,7 +78,7 @@ const Assignment = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="py-10 px-4 xl:px-32 mx-auto bg-white dark:bg-gray-900/80">
+    <div className="py-10 px-6 lg:px-18 xl:px-32 mx-auto bg-white dark:bg-gray-900/80">
       <Helmet>
         <title>All Assignments | E-Study</title>
       </Helmet>
@@ -101,7 +101,7 @@ const Assignment = () => {
         {assignments.map((item) => (
           <div
             key={item._id}
-            className="bg-white/80 dark:bg-[#293047] rounded-lg shadow-md p-4 flex items-center justify-between gap-4"
+            className="bg-white/80 dark:bg-[#293047] rounded-lg border border-gray-200 dark:border-gray-700 shadow transition-all duration-300 hover:border-[#fdc800] hover:shadow-[0_4px_20px_rgba(253,200,0,0.4)] p-4 flex items-center justify-between gap-4"
           >
             {/* Image */}
             <div className="w-2/3">
