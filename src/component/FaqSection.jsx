@@ -57,7 +57,7 @@ const FaqSection = () => {
 
   return (
     <motion.div
-      className="bg-[#f9f9f9] dark:bg-[#0b0f1a] py-20 px-6 lg:px-20"
+      className="bg-[#f0f4ff] dark:bg-[#1F2937] py-20 px-6 lg:px-20"
       id="faq"
       variants={containerVariants}
       initial="hidden"
@@ -72,8 +72,8 @@ const FaqSection = () => {
             variants={itemVariants}
             className={`rounded-xl transition-all duration-300 ${
               activeIndex === index
-                ? "bg-[#fdc800]/20 shadow-md dark:bg-white/10"
-                : "bg-white dark:bg-[#0b0f1a]"
+                ? "bg-[#fdc800]/20 shadow-md dark:bg-[#002147]"
+                : "bg-white dark:bg-[#374151]"
             }`}
           >
             <button

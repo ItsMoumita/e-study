@@ -3,17 +3,17 @@ import { FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const features = [
-  "Upload and share assignments",
-  "Allow group discussions",
-  "Real-time chat for study groups",
-  "Topic-based rooms",
-  "Create and share flashcards for subjects",
-  "Quiz each other",
-  "Study Partner Matching",
+  'Upload and share assignments',
+  'Allow group discussions',
+  'Real-time chat for study groups',
+  'Topic-based rooms',
+  'Create and share flashcards for subjects',
+  'Quiz each other',
+  'Study Partner Matching',
   "Review each other's assignments",
-  "Give feedback using rating scale",
-  "Track exam dates, assignment deadlines",
-  "Filter by topic or grade level",
+  'Give feedback using rating scale',
+  'Track exam dates, assignment deadlines',
+  'Filter by topic or grade level',
 ];
 
 // Motion variants
@@ -24,7 +24,7 @@ const containerVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: 0.1,
     },
   },
@@ -37,14 +37,15 @@ const itemVariants = {
 
 const Features = () => {
   return (
-    <motion.div
-      className="bg-[#f0f4ff] dark:bg-gray-900 py-16 px-4 md:px-8"
+    <motion.section
+      className= "bg-[#f0f4ff] dark:bg-[#1F2937] py-16 pl-6 pr-6 md:pl-12 md:pr-12"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="max-w-6xl mx-auto text-center">
+   
+      <div className=" text-center">
         <motion.h2
           className="text-[#002147] dark:text-white text-3xl md:text-4xl font-bold mb-4 tracking-wide"
           initial={{ opacity: 0, y: -20 }}
@@ -64,22 +65,18 @@ const Features = () => {
         </motion.p>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left"
+          className="mt-6 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6  lg:pl-56 lg:pr-12"
           variants={containerVariants}
         >
           {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="flex items-start gap-2"
-              variants={itemVariants}
-            >
+            <motion.div key={index} className="flex items-center gap-2" variants={itemVariants}>
               <FaArrowRight className="text-[#fdc800] mt-1" />
               <p className="text-[#002147] dark:text-white">{feature}</p>
             </motion.div>
           ))}
         </motion.div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 

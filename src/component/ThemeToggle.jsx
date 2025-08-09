@@ -42,7 +42,7 @@ const ThemeToggle = () => {
       </button>
       <Tooltip 
         id="theme-tooltip" 
-        place="bottom" 
+        place="left" 
         effect="solid"
         delayShow={200}
         className=" !text-white !rounded-lg !px-3 !py-1 text-sm"

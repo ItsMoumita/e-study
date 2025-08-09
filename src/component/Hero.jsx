@@ -3,6 +3,8 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router";
+import { FaArrowRight } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -32,15 +34,30 @@ const Hero = () => {
           />
         </motion.h1>
 
-        {/* Subtitle with wait/fade animation */}
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 2.5 }}
-          className="text-xl mb-6 text-white"
+          className="text-2xl mb-4 text-yellow-500"
         >
           your collaborative learning space.
         </motion.p>
+
+        {/* Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 3.1 }}
+        >
+          <Link
+            to="/assignments"
+            className="btn rounded text-lg px-4 py-4 bg-[#fdc800] text-[#f7f7f7] border-none hover:bg-[#eab308] shadow"
+            aria-label="Browse assignments"
+          >
+            Browse Assignments <FaArrowRight className="ml-2" />
+          </Link>
+        </motion.div>
       </motion.div>
 
       {/* Overlay dark background */}

@@ -68,22 +68,22 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="bg-[#F3F4F6] dark:bg-[#1F2937] border-t border-b border-blue-300 dark:border-blue-600 pb-6">
+    <div className="bg-[#f0f4ff] dark:bg-[#1F2937] border-t border-b border-blue-300 dark:border-blue-600  pb-6 px-6 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-6 px-4 max-w-[1440px] mx-auto"
+        className="py-6 px-6 md:px-12"
       >
-        <h2 className="text-3xl flex justify-center items-center gap-2 font-bold text-[#002147] dark:text-blue-100 mb-6 text-center">
+        <h2 className="text-4xl flex justify-center items-center gap-2 font-bold text-[#002147] dark:text-white mb-6 md:mb-12 text-center">
            What Our Users Say
         </h2>
         <Marquee direction="right" pauseOnHover gradient={false} speed={40}>
           {reviews.map((review, idx) => (
             <div
               key={idx}
-              className="w-72 mx-4 flex-shrink-0 bg-white dark:bg-[#374151] rounded-xl p-4 border border-blue-300 dark:border-blue-600 shadow-md"
+              className="mx-4 flex-shrink-0 bg-white dark:bg-[#374151] rounded-xl p-4 border border-blue-300 dark:border-blue-600 shadow-md"
             >
               <div className="flex items-center gap-3 mb-2">
                 <img

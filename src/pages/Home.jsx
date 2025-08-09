@@ -4,6 +4,7 @@ import Features from '../component/Features';
 import FaqSection from '../component/FaqSection';
 import Testimonials from '../component/Testimonials';
 import { Helmet } from 'react-helmet';
+import HomeCourses from '../component/HomeCourses';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             </Helmet>
             <Hero></Hero>
             <Features></Features>
+            <HomeCourses></HomeCourses>
             <Testimonials></Testimonials>
             <FaqSection></FaqSection>
         </div>

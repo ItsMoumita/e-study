@@ -13,7 +13,7 @@ const Courses = () => {
 
   return (
     <div className="py-10 px-6 lg:px-18 xl:px-32 mx-auto bg-white dark:bg-gray-900/80">
-      <h1 className="text-3xl font-bold mb-8 text-center text-[#002147] dark:text-white">
+      <h1 className="text-5xl font-bold mb-8 md:mb-12 text-center text-[#002147] dark:text-white">
         All Courses
       </h1>
 
@@ -28,19 +28,19 @@ const Courses = () => {
               <img
                 src={course.image}
                 alt={course.title}
-                className="rounded-lg w-full h-[150px] object-cover"
+                className="rounded-lg w-full h-[250px] object-cover"
               />
             </div>
 
             {/* Course Info */}
-            <div className="mt-4 space-y-2 text-[#002147] dark:text-white">
-              <p className="text-sm font-semibold">
+            <div className="mt-4 space-y-4 px-2 text-[#002147] dark:text-white">
+              <p className="text-lg font-semibold">
                 Title: <span className="font-normal">{course.title}</span>
               </p>
-              <p className="text-sm font-semibold">
+              <p className="text-lg font-semibold">
                 Duration: <span className="font-normal">{course.duration}</span>
               </p>
-              <p className="text-sm font-semibold">
+              <p className="text-lg font-semibold">
                 Description:{" "}
                 <span className="font-normal">{course.description}</span>
               </p>
