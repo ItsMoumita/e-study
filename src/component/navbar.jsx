@@ -31,7 +31,7 @@ const Navbar = ({ toggleTheme }) => {
   };
   return (
     <nav className="bg-[#002147]  px-6 md:px-12 py-5 shadow-md">
-      <div className="flex justify-between items-center">
+      <div className="px-6 lg:px-18 flex justify-between items-center gap-6">
         {/* Website Name */}
         <h1 className="text-3xl font-bold">
           <span className="text-[#fdc800]">E</span>
@@ -59,6 +59,9 @@ const Navbar = ({ toggleTheme }) => {
         <div className="hidden md:flex items-center gap-6 md:gap-12 text-lg">
           <NavLink to="/" className={navLinkClass}>
             Home
+          </NavLink>
+          <NavLink to="/courses" className={navLinkClass}>
+            Courses
           </NavLink>
           <NavLink to="/assignments" className={navLinkClass}>
             Assignments
@@ -148,6 +151,9 @@ const Navbar = ({ toggleTheme }) => {
               <NavLink to="/" className={navLinkClass}>
                 Home
               </NavLink>
+              <NavLink to="/courses" className={navLinkClass}>
+                Courses
+              </NavLink>
               <NavLink to="/assignments" className={navLinkClass}>
                 Assignments
               </NavLink>
@@ -183,6 +189,9 @@ const Navbar = ({ toggleTheme }) => {
               
               <NavLink to="/" className={navLinkClass}>
                 Home
+              </NavLink>
+              <NavLink to="/courses" className={navLinkClass}>
+                Courses
               </NavLink>
               <NavLink to="/assignments" className={navLinkClass}>
                 Assignments

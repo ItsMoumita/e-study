@@ -13,14 +13,14 @@ const MyAssignments = () => {
   useEffect(() => {
     const fetchMySubmissions = async () => {
       try {
-        // const token = await user.getIdToken();
-
-        const res = await axios.get(`https://e-study-server-nine.vercel.app/submissions/user/${user.email}`, {
-          headers: {
-            Authorization: `Bearer ${user.accessToken}`,
-          },
-        });
-
+        const res = await axios.get(
+          `https://e-study-server-nine.vercel.app/submissions/user/${user.email}`,
+          {
+            headers: {
+              Authorization: `Bearer ${user.accessToken}`,
+            },
+          }
+        );
         setSubmissions(res.data);
       } catch (err) {
         console.error("Error fetching submissions:", err);
@@ -38,47 +38,70 @@ const MyAssignments = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="px-4 py-8 max-w-5xl mx-auto min-h-[calc(100vh-160px)]">
+    <div className="bg-white dark:bg-[#0b0f1a] min-h-[calc(100vh-160px)] py-10 px-4">
       <Helmet>
         <title>My Assignments | E-Study</title>
       </Helmet>
-      <h2 className="text-2xl font-bold mb-6 text-center text-[#002147] dark:text-white">
-        My Submitted Assignments
-      </h2>
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold mb-8 md:mb-12 text-center text-[#002147] dark:text-[#fdc800]">
+          My Submitted Assignments
+        </h2>
 
-      {submissions.length === 0 ? (
-        <p className="text-center text-gray-500 dark:text-gray-300">No submissions found.</p>
-      ) : (
-        <div className="overflow-x-auto">
-          <table className="min-w-full border border-gray-300 dark:border-gray-700">
-            <thead className="bg-[#fdc800] text-black ">
-              <tr>
-                <th className="p-3 border">Assignment Title</th>
-                <th className="p-3 border">Status</th>
-                <th className="p-3 border">Total Marks</th>
-                <th className="p-3 border">Obtained Marks</th>
-                <th className="p-3 border">Feedback</th>
-              </tr>
-            </thead>
-            <tbody className="text-center">
-              {submissions.map((item) => (
-                // console.log(item),
-                <tr key={item._id} className="bg-white dark:bg-[#1a1f2e] dark:text-white">
-                  <td className="p-3 border">{item.title}</td>
-                  <td className="p-3 border capitalize">{item.status}</td>
-                  <td className="p-3 border">{item.marks}</td>
-                  <td className="p-3 border">
-                    {item.status === "completed" ? item.mark : "N/A"}
-                  </td>
-                  <td className="p-3 border">
-                    {item.status === "completed" ? item.feedback : "Not yet evaluated"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+        {submissions.length === 0 ? (
+          <p className="text-center text-gray-600 dark:text-gray-300">
+            You haven’t submitted any assignments yet.
+          </p>
+        ) : (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {submissions.map((item) => (
+              <div
+                key={item._id}
+                className="bg-white dark:bg-[#1a1f2e] rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow transition-all duration-300 hover:border-[#fdc800] hover:shadow-[0_4px_20px_rgba(253,200,0,0.4)]"
+              >
+                <h3 className="text-xl font-semibold text-[#002147] dark:text-[#fdc800] mb-2">
+                  {item.title}
+                </h3>
+
+                <p className="mb-1">
+                  <span className="font-semibold">Status:</span>{" "}
+                  <span
+                    className={`capitalize font-medium ${
+                      item.status === "completed"
+                        ? "text-green-600 dark:text-green-400"
+                        : "text-yellow-600 dark:text-yellow-400"
+                    }`}
+                  >
+                    {item.status}
+                  </span>
+                </p>
+
+                <p className="mb-1">
+                  <span className="font-semibold">Total Marks:</span>{" "}
+                  {item.marks}
+                </p>
+
+                <p className="mb-1">
+                  <span className="font-semibold">Obtained Marks:</span>{" "}
+                  {item.status === "completed" ? (
+                    <span className="text-green-700 dark:text-green-300 font-bold">
+                      {item.mark}
+                    </span>
+                  ) : (
+                    "N/A"
+                  )}
+                </p>
+
+                <p className="mt-2 text-gray-700 dark:text-gray-300">
+                  <span className="font-semibold">Feedback:</span>{" "}
+                  {item.status === "completed"
+                    ? item.feedback
+                    : "Not yet evaluated"}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

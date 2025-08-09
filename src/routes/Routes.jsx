@@ -15,6 +15,7 @@ import GiveMark from "../pages/GiveMark";
 import MyAssignments from "../pages/MyAssignments";
 import Private from "../context/Private";
 import Error from "../pages/Error";
+import Courses from "../pages/Courses";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,11 @@ export const router = createBrowserRouter([
         index: true,
         Component: Home
       },
+      {
+        path: "courses",
+        Component: Courses
+      },
+      
       {
         path: "create-assignment",
         Component: () => (

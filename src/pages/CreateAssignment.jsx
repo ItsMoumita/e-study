@@ -67,7 +67,7 @@ const CreateAssignment = () => {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-[#f9f9f9] dark:bg-[#0b0f1a] py-10 px-4">
+    <div className="min-h-[80vh] flex items-center justify-center bg-white dark:bg-[#0b0f1a] py-10 px-4">
       <Helmet>
         <title>Create Assignment | E-Study</title>
       </Helmet>

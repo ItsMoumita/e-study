@@ -33,7 +33,7 @@ const PendingAssignment = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="py-10 px-4 max-w-6xl mx-auto">
+    <div className="py-10 px-4 max-w-6xl mx-auto ">
       <Helmet>
         <title>Pending Assignments | E-Study</title>
       </Helmet>

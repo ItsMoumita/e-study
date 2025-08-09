@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "title": "React Basics",
+    "description": "Learn the fundamentals of React, including components, state, and props.",
+    "image": "/images/react-basics.jpg",
+    "duration": "4 weeks"
+  },
+  {
+    "id": 2,
+    "title": "Advanced React",
+    "description": "Dive deeper into hooks, context, and performance optimization.",
+    "image": "/images/advanced-react.jpg",
+    "duration": "6 weeks"
+  },
+  {
+    "id": 3,
+    "title": "JavaScript Essentials",
+    "description": "Master the core concepts of JavaScript for web development.",
+    "image": "/images/js-essentials.jpg",
+    "duration": "5 weeks"
+  },
+  {
+    "id": 4,
+    "title": "Node.js Fundamentals",
+    "description": "Learn to build scalable backend applications using Node.js.",
+    "image": "/images/nodejs.jpg",
+    "duration": "6 weeks"
+  },
+  {
+    "id": 5,
+    "title": "MongoDB for Beginners",
+    "description": "Understand MongoDB CRUD operations and schema design.",
+    "image": "/images/mongodb.jpg",
+    "duration": "3 weeks"
+  },
+  {
+    "id": 6,
+    "title": "Full-Stack Development",
+    "description": "Build complete web apps with React, Node.js, and MongoDB.",
+    "image": "/images/fullstack.jpg",
+    "duration": "8 weeks"
+  },
+  {
+    "id": 7,
+    "title": "HTML & CSS Mastery",
+    "description": "Design beautiful, responsive web pages.",
+    "image": "/images/html-css.jpg",
+    "duration": "3 weeks"
+  },
+  {
+    "id": 8,
+    "title": "Tailwind CSS",
+    "description": "Style modern web apps quickly with Tailwind CSS.",
+    "image": "/images/tailwind.jpg",
+    "duration": "2 weeks"
+  },
+  {
+    "id": 9,
+    "title": "Express.js API Development",
+    "description": "Create powerful APIs with Express.js.",
+    "image": "/images/express.jpg",
+    "duration": "4 weeks"
+  },
+  {
+    "id": 10,
+    "title": "Firebase Authentication",
+    "description": "Integrate secure authentication into your projects.",
+    "image": "/images/firebase.jpg",
+    "duration": "2 weeks"
+  },
+  {
+    "id": 11,
+    "title": "TypeScript Basics",
+    "description": "Enhance your JavaScript with strong typing.",
+    "image": "/images/typescript.jpg",
+    "duration": "3 weeks"
+  },
+  {
+    "id": 12,
+    "title": "Next.js Fundamentals",
+    "description": "Build SEO-friendly, server-rendered React apps.",
+    "image": "/images/nextjs.jpg",
+    "duration": "5 weeks"
+  },
+  {
+    "id": 13,
+    "title": "Git & GitHub",
+    "description": "Master version control and collaboration.",
+    "image": "/images/git.jpg",
+    "duration": "2 weeks"
+  },
+  {
+    "id": 14,
+    "title": "REST API Design",
+    "description": "Design and implement RESTful APIs.",
+    "image": "/images/restapi.jpg",
+    "duration": "3 weeks"
+  },
+  {
+    "id": 15,
+    "title": "UI/UX Design Basics",
+    "description": "Learn design principles to create great user experiences.",
+    "image": "/images/uiux.jpg",
+    "duration": "3 weeks"
+  }
+]
