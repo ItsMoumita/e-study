@@ -86,14 +86,14 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-[100vh]  flex flex-col gap-12 items-center justify-center bg-[#f0f4ff] py-10">
+        <div className="min-h-[100vh]  flex flex-col gap-12 items-center justify-center bg-gradient-to-l from-[#002147]  to-gray-900/80 py-10">
             <Helmet>
                 <title>Login | E-Study</title>
             </Helmet>
             <div className=" top-20 left-1/2 -translate-x-1/2">
                 <Link
                     to="/"
-                    className="text-[#002147] text-2xl hover:text-[#fdc800] font-semibold flex items-center gap-1 transition-colors"
+                    className="text-[#e6ecff] text-2xl hover:text-[#fdc800] font-semibold flex items-center gap-1 transition-colors"
                 >
                     <span className="text-2xl">←</span> Back to home
                 </Link>

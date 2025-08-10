@@ -42,7 +42,7 @@ const CreateAssignment = () => {
     title: "Success!",
     text: "Assignment created successfully.",
     icon: "success",
-    confirmButtonColor: "#fdc800",
+    confirmButtonColor: "#002147",
   });
 
   // Clear form
@@ -58,7 +58,7 @@ const CreateAssignment = () => {
     title: "Error",
     text: err.createdAssignment?.data?.message || err.message,
     icon: "error",
-    confirmButtonColor: "#fdc800",
+    confirmButtonColor: "#002147",
   });
 } finally {
   setLoading(false);

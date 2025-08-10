@@ -56,7 +56,13 @@ const UpdatedAssignment = () => {
       );
 
       if (updated.status === 200) {
-        Swal.fire("Updated!", "Assignment updated successfully.", "success");
+        // Swal.fire("Updated!", "Assignment updated successfully.", "success");
+        Swal.fire({
+          icon: "success",
+          title: "Updated!",
+          text: "Assignment updated successfully.",
+          confirmButtonColor: "#002147",
+        });
         navigate("/assignments");
       }
     } catch (err) {

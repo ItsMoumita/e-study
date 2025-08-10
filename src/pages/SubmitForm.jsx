@@ -61,7 +61,13 @@ const SubmitForm = () => {
       });
 
       if (res.status === 201) {
-        Swal.fire("Success", "Assignment submitted successfully", "success");
+        // Swal.fire("Success", "Assignment submitted successfully", "success");
+        Swal.fire({
+          icon: "success",
+          title: "Submitted!",
+          text: "Assignment submitted successfully",
+          confirmButtonColor: "#002147",
+        });
         navigate("/assignments");
       }
     } catch (err) {

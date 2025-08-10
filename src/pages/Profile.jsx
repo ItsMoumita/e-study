@@ -44,10 +44,21 @@ const Profile = () => {
       }
 
       setEditMode(false);
-      Swal.fire("Success", "Profile updated!", "success");
+      // Swal.fire("Success", "Profile updated!", "success");
+      Swal.fire({
+          icon: "success",
+          title: "Updated!",
+          text: "Profile updated successfully",
+          confirmButtonColor: "#002147",
+        });
     } catch (err) {
       console.error(err);
-      Swal.fire("Error", err.message || "Failed to update profile", "error");
+      // Swal.fire("Error", err.message || "Failed to update profile", "error");
+      return Swal.fire({
+        icon: "error",
+        text: "Failed to update profile",
+        confirmButtonColor: "#002147",
+      });
     } finally {
       setLoading(false);
     }

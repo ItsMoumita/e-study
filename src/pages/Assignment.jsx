@@ -70,7 +70,7 @@ const Assignment = () => {
         icon: "error",
         title: "Unauthorized",
         text: "You can't delete others' assignments!",
-        confirmButtonColor: "#fdc800",
+        confirmButtonColor: "#002147",
       });
     }
 
@@ -79,7 +79,7 @@ const Assignment = () => {
       text: "Do you really want to delete this assignment?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#fdc800",
+      confirmButtonColor: "#002147",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     });
@@ -96,7 +96,7 @@ const Assignment = () => {
           icon: "success",
           title: "Deleted!",
           text: "Assignment deleted successfully.",
-          confirmButtonColor: "#fdc800",
+          confirmButtonColor: "#002147",
         });
         fetchAssignments();
       } catch (err) {
@@ -104,7 +104,7 @@ const Assignment = () => {
           icon: "error",
           title: "Error",
           text: err.response?.data?.message || err.message,
-          confirmButtonColor: "#fdc800",
+          confirmButtonColor: "#002147",
         });
       }
     }

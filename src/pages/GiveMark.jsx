@@ -43,7 +43,13 @@ const GiveMark = () => {
      
     if (submission.studentEmail === user.email) {
     
-      return Swal.fire("Error", "You can't evaluate your own submission!", "error");
+      // return Swal.fire("Error", "You can't evaluate your own submission!", "error");
+      return Swal.fire({
+        icon: "error",
+        title: "Unauthorized",
+        text: "You can't evaluate your own submission!",
+        confirmButtonColor: "#002147",
+      });
     }
 
     if (!givenMark || !feedback) {
@@ -67,11 +73,17 @@ const GiveMark = () => {
       );
 
       if (res.status === 200) {
-        Swal.fire("Success", "Marks given successfully!", "success");
+        // Swal.fire("Success", "Marks given successfully!", "success");
+        Swal.fire({
+          icon: "success",
+          text: "Marks given successfully!",
+          confirmButtonColor: "#002147",
+        });
         navigate("/pending");
       }
     } catch (err) {
       Swal.fire("Error", err.response?.data?.message || err.message, "error");
+     
     }
   };
 
