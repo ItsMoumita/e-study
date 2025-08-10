@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaYoutube, FaGithub, FaLinkedinIn, FaArrowUp } from "react-icons/fa";
+import { NavLink } from "react-router";
 
 const Footer = () => {
   const year = new Date().getFullYear();

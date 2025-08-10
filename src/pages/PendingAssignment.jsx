@@ -45,7 +45,7 @@ const PendingAssignment = () => {
         <p className="text-center text-gray-600 dark:text-gray-300">No pending assignments found.</p>
       ) : (
         <div className="overflow-x-auto">
-          <table className=" mx-auto text-lg bg-white dark:bg-[#373f55] border rounded-lg">
+          <table className="w-11/12 md:w-10/12 mx-auto text-lg bg-white dark:bg-[#373f55] border rounded-lg">
             <thead className="bg-[#fdc800] text-black">
               <tr>
                 <th className="py-3 px-4 text-left">Title</th>

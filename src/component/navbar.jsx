@@ -32,8 +32,8 @@ const Navbar = ({ toggleTheme }) => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#002147] px-6 md:px-12 py-5 shadow-md">
-      <div className="px-6 lg:px-18 flex justify-between items-center gap-6">
+    <nav className="sticky top-0 z-50 bg-[#002147] px-6 lg:px-8 py-5 shadow-md">
+      <div className="px-6 lg:px-18 flex justify-between items-center gap-4 lg:gap-6">
         {/* Brand */}
         <h1 className="text-3xl font-bold">
           <span className="text-[#fdc800]">E</span>
@@ -41,7 +41,7 @@ const Navbar = ({ toggleTheme }) => {
         </h1>
 
         {/* Mobile icons */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           <button
             onClick={toggleTheme}
             className="text-white text-xl hover:text-[#fdc800] transition"
@@ -58,7 +58,7 @@ const Navbar = ({ toggleTheme }) => {
         </div>
 
         {/* Desktop menu */}
-        <div className="hidden md:flex items-center gap-6 md:gap-12 text-lg">
+        <div className="hidden lg:flex items-center gap-6 lg:gap-12 text-lg">
           <NavLink to="/" className={navLinkClass}>
             Home
           </NavLink>
@@ -156,7 +156,7 @@ const Navbar = ({ toggleTheme }) => {
 
       {/* Mobile Menu Sheet */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed right-0 w-1/3 min-w-64 bg-[#073366] z-50 p-6 flex flex-col gap-4 text-lg shadow-lg transition-transform duration-300">
+        <div className="lg:hidden fixed right-0 w-1/3 min-w-64 bg-[#073366] z-50 p-6 flex flex-col gap-4 text-lg shadow-lg transition-transform duration-300">
           <NavLink to="/" className={navLinkClass} onClick={() => setMobileMenuOpen(false)}>
             Home
           </NavLink>

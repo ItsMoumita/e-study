@@ -80,7 +80,7 @@ const Courses = () => {
         initial={{ opacity: 0, y: -14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-5xl font-bold mb-8 md:mb-12 text-center text-[#002147] dark:text-white"
+        className="text-4xl font-bold mb-8 md:mb-12 text-center text-[#002147] dark:text-white"
       >
         All Courses
       </motion.h1>

@@ -65,7 +65,7 @@ const Features = () => {
         </motion.p>
 
         <motion.div
-          className="mt-6 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6  lg:pl-56 lg:pr-12"
+          className="mt-6 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6  xl:pl-56 xl:pr-12"
           variants={containerVariants}
         >
           {features.map((feature, index) => (
