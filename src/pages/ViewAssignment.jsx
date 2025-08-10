@@ -30,7 +30,7 @@ const ViewAssignment = () => {
   if (loading) return <Loading></Loading>
     return (
     
-      <div className="min-h-[calc(100vh-163px)] flex items-center justify-center bg-[#f9f9f9] dark:bg-[#0b0f1a] px-4 py-10">
+      <div className="min-h-[calc(100vh-153px)] flex items-center justify-center py-10 px-6 lg:px-18 xl:px-32 mx-auto bg-[#f0f4ff] dark:bg-gray-900/80">
         <Helmet>
           <title>View Assignment | E-Study</title>
         </Helmet>

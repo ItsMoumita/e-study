@@ -69,7 +69,7 @@ const UpdatedAssignment = () => {
   if (loading || !assignment) return <Loading />;
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-[#f9f9f9] dark:bg-[#0b0f1a] py-10 px-4">
+    <div className="min-h-[92vh] flex items-center justify-center py-10 px-6 lg:px-18 xl:px-32 mx-auto bg-[#f0f4ff] dark:bg-gray-900/80">
       <Helmet>
         <title>Update Assignment | E-Study</title>
       </Helmet>
