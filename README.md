@@ -43,7 +43,7 @@
 
 ### 💡 Home Page
 - Responsive **Banner**, **Features Section**, and **FAQ**
-- Smooth animations using **Framer Motion**
+- Smooth animation using **Framer Motion**
 
 ### 🎨 UI & Theming
 - Responsive Tailwind CSS styling
